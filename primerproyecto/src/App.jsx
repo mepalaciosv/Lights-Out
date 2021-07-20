@@ -7,27 +7,15 @@ import Desarrolladores from './components/Desarrolladores'
 import Login from './components/Login'
 
 // Tests
-// import Contador from './components/Contador'
-// import Listado from './components/Listado'
-import Temperatura from './components/Temperatura'
-// import Formulario from './components/Formulario'
-import ListadoNombres from './components/ListadoNombres'
+// import Contador from './components/Tests/Contador'
+// import Listado from './components/Tests/Listado'
+// import Temperatura from './components/Tests/Temperatura'
+// import Formulario from './components/Tests/Formulario'
+// import ListadoNombres from './components/Tests/ListadoNombres'
 
 function App() {
   return (
     <div className="App">
-
-        <Inicio />
-        {/* <Contador></Contador> */}
-        {/* <Listado></Listado> */}
-        <Temperatura></Temperatura>
-        {/* <Formulario></Formulario> */}
-
-        <h3> f </h3>
-        <ListadoNombres />
-      {/* <Login> </Login> */}
-      {/* <Estadisticas> </Estadisticas>*/}
-      {/* <Desarrolladores> </Desarrolladores> */}
 
     </div>
   );
