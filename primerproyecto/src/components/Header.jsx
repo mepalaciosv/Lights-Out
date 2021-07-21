@@ -6,7 +6,7 @@ const Header = () => {
         <div>
             <nav className="navbar navbar-dark bg-dark">
                 <div className="container-fluid">
-                    <Link to ="/" className = "text-white"> Light Out </Link>
+                    <Link to ="/" className = "text-white"> Lights Out </Link>
                     <Link to ="/Estadisticas" className = "text-white"> Estadísticas </Link>
                     <Link to ="/Desarrolladores" className = "text-white"> Desarrolladores </Link>
                     <Link to ="/Login" className = "text-white"> Login </Link>
