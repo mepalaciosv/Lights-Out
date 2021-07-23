@@ -1,13 +1,13 @@
 import React from 'react';
-import { Button } from 'antd';
 import imagen from '../images/estadisticas.png';
 import "./Estadisticas.css";
 
 const Estadisticas = () => {
+
   return (
     <div>
       <div>
-        <img src = {imagen} className = "imagenSuperior"/>
+        <img src = {imagen} className = "imagenSuperior" alt = "imagenSuperior"/>
         <h1 className = "encabezado">Estadísticas</h1>
       </div>
       <div>
@@ -17,6 +17,4 @@ const Estadisticas = () => {
     </div>
   );
 }
-
-
-export default Estadisticas
+export default Estadisticas;

@@ -1,18 +1,27 @@
 import React, { useState } from 'react';
+import reset from './imgs/reset.png'
+import settings from './imgs/gear.png'
+import Popup from './PopupSettings'
 
 const Inicio = () => {
 
-    // Antes del return se puede poner codigo JS
-
     const [dimensions, setDimensions] = useState([4,4])
-    const [array, setArray] = useState([[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]])
+    const [array, setArray] = useState([[false,false,false,false],[false,false,false,false],
+                                        [false,false,false,false],[false,false,false,false]])
+    const [isOpen, setIsOpen] = useState(false)
 
-    const createArray = (e)=> {
+    const createArray = (e) => {
         e.preventDefault()
         console.log('se creo el array')
-        const newArray = Array(dimensions[0]).fill(0).map(row => new Array(dimensions[1]).fill(0))
+        const newArray = Array(dimensions[0]).fill(false).map(row => new Array(dimensions[1]).fill(false))
         setArray(newArray)
-
+        setIsOpen(!isOpen)
+    }
+    const createArray2 = (e) => {
+        e.preventDefault()
+        console.log('se creo el array')
+        const newArray = Array(dimensions[0]).fill(false).map(row => new Array(dimensions[1]).fill(false))
+        setArray(newArray)
     }
 
     const changeColor = (a,b) => {
@@ -21,60 +30,88 @@ const Inicio = () => {
         const bN = Number(b)
         const newArray = [...array]
 
-        if (newArray[aN][bN] === 1) {
-            newArray[aN][bN] = 0
-        } else {
-            newArray[aN][bN] = 1
+        newArray[aN][bN] = !newArray[aN][bN]
+        console.log(a,b)
+        if(aN-1 >= 0){
+            newArray[aN-1][bN] = !newArray[aN-1][bN]
         }
-        
+        if(aN+1 < dimensions[0]){
+            newArray[aN+1][bN] = !newArray[aN+1][bN]
+        }
+        if(bN-1 >= 0){
+            newArray[aN][bN-1] = !newArray[aN][bN-1]
+        }
+        if(bN+1 < dimensions[1]){
+            newArray[aN][bN+1] = !newArray[aN][bN+1]
+        }
         setArray( newArray )  
     }
-
     const changeDimensions = (a) => {
         setDimensions([a,a])
     }
-    
+    const togglePopup = () => {
+        console.log('entro')
+        setIsOpen(!isOpen);
+      }
     return (
-
-        // En el return se puede escribir codigo .html
         <div>
-            {/* Acá se especifica el tamaño del tablero */}
-            <div>
-            <form onSubmit={createArray}>
-                <input 
-                    placeholder = "Ingresa el tamaño"
-                    className = "form-control mb-3"
-                    type = "text"
-                    onChange = {(e) => {changeDimensions(Number(e.target.value))}}
-                />
-                {/* Boton de submit */}
-                <input 
-                        className = "btn btn-info btn-block mb-3"
-                        type = "submit"
-                />
-
-            </form>
-                
-            </div>
-
-            {/* Tablero de juego que se crea de forma dinamica */}
-            <div className="game-board">     
-                {
-                    array.map( (item, key) =>
-                        <div>
-                            {
-                                Object.keys(item).map( (item2, key2) =>
-                                    <div>
-                                        <button className = {array[key][key2] === 1 ? 'on-button' : 'off-button' } 
-                                        type="button" onClick = { () => {changeColor(key,key2)} } > 
-                                            Light 
-                                        </button>
-                                    </div>
-                                )
-                            }
+            {isOpen && <Popup
+                content={<>
+                    <b>Ingresa el tamaño del tablero</b>
+                    {/* Acá se especifica el tamaño del tablero */}
+                    <div>
+                        <form onSubmit={createArray}>
+                            <p></p>
+                            <input 
+                                placeholder = "Ingresa un número entero"
+                                className = "form-control mb-3"
+                                type = "text"
+                                onChange = { (e) => {changeDimensions(Number(e.target.value))} }
+                            />
+                            {/* Boton de submit */}
+                            <input 
+                                    className = "btn btn-warning btn-block mb-3"
+                                    type = "submit"
+                            />
+                        </form>
+                    </div>
+                </>}
+                handleClose={togglePopup}
+            />}
+            <div className = "main-container">
+                <div className="left-container">
+                    <div className="stats-container">
+                        <div className="stats-icons">
+                            <input className="stats-icons" type="image" src={reset} 
+                                    alt="reset-button" onClick={(e) => {createArray2(e)}} 
+                            />
                         </div>
-                    )
-                }
+                        <div className="time-counter">
+                            <b>  Elapsed Time: 1:23:02s </b> 
+                        </div>
+                        <div className="stats-icons">
+                            <input className="stats-icons" type="image" src={settings} 
+                                    alt="settings-button" onClick={() => {togglePopup()}} 
+                            />
+                        </div>
+                    </div>
+                    {
+                        array.map( (item, key) =>
+                            <div className="game-row">
+                                {
+                                    Object.keys(item).map( (item2, key2) =>
+                                        <div className = "button-container">
+                                            <button className = {array[key][key2] === true ? 'on-button' : 'off-button' } 
+                                            type="button" onClick = { () => {changeColor(key,key2)} } > </button>
+                                        </div>
+                                    )
+                                }
+                            </div>
+                        )
+                    }
+                </div>
+                <div className = "right-container">
+            </div>
             </div>
         </div>
     )
