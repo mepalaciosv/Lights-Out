@@ -1,24 +1,96 @@
 @import '~antd/dist/antd.css';
 
+/* TABLERO DE JUEGO */
+.game-row{
+  flex:auto;
+  display: flex;
+}
+
+.button-container{
+  flex:auto;
+  display: flex;
+}
+
 .on-button{
-    background-color: yellow;
-    height: 100px;
-    width: 100px;
+    background-color: #F9E325;
     border: 1px black solid;
+    cursor: pointer;
+    flex:auto
 }
 
 .off-button{
-  background-color: darkblue;
-  height: 100px;
-  width: 100px;
+  background-color: #464D65;
   border: 1px black solid;
+  cursor: pointer;
+  flex: auto;
 }
 
-.game-board {
+
+/* LEFT RIGHT INTERFACE */
+.main-container{
+  width: 100vw;
+  height: 40vw;
   display: flex;
-  justify-content: center;
-  padding: 5%;
 }
-.game-row{
+
+.left-container{
+  width: 70vw;
   display: flex;
+  flex-direction: column;
+  padding-top: 0vw;
+  padding-left: 15vw;
+  padding-right: 25vw;
+}
+
+.right-container{
+  width: 30vw;
+}
+
+/* BOTONES ARRIBA DEL JUEGO */
+.stats-container{
+  height: 10vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.time-counter{
+  width: 20vw;
+  padding-bottom: 1vw;
+  padding-top: 5vw;
+  background-color: #C4C4C4;
+  background-clip: content-box;
+  text-align: center;
+  line-height: 4vw;
+  font-size: 170%;
+}
+
+.stats-icons{
+  height: 9vw;
+  width: 4.5vw;
+  padding-top: 2.3vw;
+  padding-bottom: 2.2vw;
+}
+
+/* Popup style */
+.popup-box {
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+ 
+.box {
+  position: relative;
+  width: 20%;
+  margin: 0 auto;
+  height: auto;
+  max-height: 70vh;
+  margin-top: calc(100vh - 80vh);
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #999;
+  overflow: auto;
 }

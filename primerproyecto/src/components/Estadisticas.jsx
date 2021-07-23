@@ -3,16 +3,16 @@ import React from 'react';
 const Estadisticas = () => {
 
     return (
-       <div class = 'container-fluid'> 
-        <div class="container-fluid">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Dashboard</h1>
-            <div class="btn-toolbar mb-2 mb-md-0">
-              <div class="btn-group mr-2">
-                <button class="btn btn-sm btn-outline-secondary">Share</button>
-                <button class="btn btn-sm btn-outline-secondary">Export</button>
+       <div className = 'container-fluid'> 
+        <div className="container-fluid">
+          <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 className="h2">Dashboard</h1>
+            <div className="btn-toolbar mb-2 mb-md-0">
+              <div className="btn-group mr-2">
+                <button className="btn btn-sm btn-outline-secondary">Share</button>
+                <button className="btn btn-sm btn-outline-secondary">Export</button>
               </div>
-              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+              <button className="btn btn-sm btn-outline-secondary dropdown-toggle">
                 <span data-feather="calendar"></span>
                 This week
               </button>
@@ -24,8 +24,8 @@ const Estadisticas = () => {
 
 
           <h2>Section title</h2>
-          <div class="table-responsive">
-            <table class="table table-striped table-sm">
+          <div className="table-responsive">
+            <table className="table table-striped table-sm">
               <thead>
                 <tr>
                   <th>#</th>
@@ -117,7 +117,7 @@ const Estadisticas = () => {
                   <td>1,011</td>
                   <td>eget</td>
                   <td>nulla</td>
-                  <td>Class</td>
+                  <td>className</td>
                   <td>aptent</td>
                 </tr>
                 <tr>
