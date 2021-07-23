@@ -9,8 +9,8 @@ const Header = () => {
                     <Link to ="/" className = "text-white"> Lights Out </Link>
                     <Link to ="/Estadisticas" className = "text-white"> Estadísticas </Link>
                     <Link to ="/Desarrolladores" className = "text-white"> Desarrolladores </Link>
-                    <Link to ="/Login" className = "text-white"> Login </Link>
-                    <Link to ="/Register" className = "text-white"> Register </Link>
+                    <Link to ="/Login" className = "text-white"> Ingreso </Link>
+                    <Link to ="/Register" className = "text-white"> Registro </Link>
                 </div>
             </nav>
         </div>

@@ -12,26 +12,26 @@ const Login = () => {
     
       return (
         <Form
-          name="basic"
-          labelCol={{
+          name = "basic"
+          labelCol = {{
             span: 8,
           }}
-          wrapperCol={{
+          wrapperCol = {{
             span: 9,
           }}
-          initialValues={{
+          initialValues = {{
             remember: true,
           }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
+          onFinish = {onFinish}
+          onFinishFailed = {onFinishFailed}
         >
           <Form.Item
-            label="Username"
-            name="username"
-            rules={[
+            label = "Usuario"
+            name = "username"
+            rules = {[
               {
                 required: true,
-                message: 'Please input your username!',
+                message: 'Por favor ingresa tu usuario',
               },
             ]}
           >
@@ -39,12 +39,12 @@ const Login = () => {
           </Form.Item>
     
           <Form.Item
-            label="Password"
-            name="password"
-            rules={[
+            label = "Contraseña"
+            name = "password"
+            rules = {[
               {
                 required: true,
-                message: 'Please input your password!',
+                message: 'Por favor ingresa tu contraseña',
               },
             ]}
           >
@@ -52,24 +52,24 @@ const Login = () => {
           </Form.Item>
     
           <Form.Item
-            name="remember"
-            valuePropName="checked"
-            wrapperCol={{
+            name = "remember"
+            valuePropName = "checked"
+            wrapperCol = {{
               offset: 8,
               span: 8,
             }}
           >
-            <Checkbox>Remember me</Checkbox>
+            <Checkbox>Recuerda mi cuenta</Checkbox>
           </Form.Item>
     
           <Form.Item
-            wrapperCol={{
+            wrapperCol = {{
               offset: 8,
               span: 8,
             }}
           >
-            <Button type="primary" htmlType="submit">
-              Submit
+            <Button type = "primary" htmlType = "submit">
+              Iniciar sesión
             </Button>
           </Form.Item>
         </Form>
