@@ -41,3 +41,11 @@ body {
   display: table;
   clear: both;
 }
+
+.stats-container{
+  display: flex;
+}
+
+.stats-column{
+  width: 50vw;
+}

@@ -110,8 +110,6 @@ const Inicio = () => {
                         )
                     }
                 </div>
-                <div className = "right-container">
-            </div>
             </div>
         </div>
     )

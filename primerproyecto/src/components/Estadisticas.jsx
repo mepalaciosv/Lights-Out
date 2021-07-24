@@ -16,11 +16,11 @@ const Estadisticas = () => {
         <h1 className = "textoMenor">Tiempo de juego</h1>
       </div>
       
-      <div class = "row">
-        <div class = "column">
+      <div class = "stats-container">
+        <div class = "stats-column">
           <h1 className = "textoMenor">Partidas</h1>
           
-          <div class = "row">
+          <div class = "stats-container">
             <div class = "column">
               <h1 className = "numeros">5</h1>
               <h1 className = "textoMenor">Ganadas</h1>
@@ -32,10 +32,10 @@ const Estadisticas = () => {
           </div>
 
         </div>
-        <div class="column">
+        <div class="stats-column">
           <h1 className = "textoMenor">Ayudas</h1>
 
-          <div class = "row">
+          <div class = "stats-container">
             <div class = "column">
               <h1 className = "numeros">8</h1>
               <h1 className = "textoMenor">Pistas</h1>

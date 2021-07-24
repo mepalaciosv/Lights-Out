@@ -56,7 +56,6 @@ function App() {
           <Register />
         </Route>
       </Switch>
-
     </Router>
   );
 }
