@@ -1,4 +1,6 @@
-@import '~antd/dist/antd.css';
+body {
+  background-color: rgb(220, 242, 248);
+}
 
 /* TABLERO DE JUEGO */
 .game-row{
@@ -89,4 +91,38 @@
   padding: 20px;
   border: 1px solid #999;
   overflow: auto;
+}
+
+/* Barra de Navegación */
+.nav-container{
+  height: 7vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #C4C4C4;
+  width: 100vw;
+}
+
+.nav-text {
+  padding: 15px 25px;
+  font-size: 1.8vw;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.nav-text:link{
+  text-decoration: none;
+}
+.nav-text:hover {background-color: #3e8e41}
+
+.nav-text:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
