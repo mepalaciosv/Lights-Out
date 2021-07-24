@@ -25,13 +25,12 @@ const Inicio = () => {
     }
 
     const changeColor = (a,b) => {
-
+        
         const aN = Number(a)
         const bN = Number(b)
         const newArray = [...array]
 
         newArray[aN][bN] = !newArray[aN][bN]
-        console.log(a,b)
         if(aN-1 >= 0){
             newArray[aN-1][bN] = !newArray[aN-1][bN]
         }
@@ -46,6 +45,23 @@ const Inicio = () => {
         }
         setArray( newArray )  
     }
+
+    const pista = () => {
+
+    }
+
+    const solucion = () => {
+
+    }
+
+    const validarVictoria = () => {
+
+    }
+
+    const nuevoJuego = () => {
+        
+    }
+
     const changeDimensions = (a) => {
         setDimensions([a,a])
     }
