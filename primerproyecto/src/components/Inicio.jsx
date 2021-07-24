@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import reset from './imgs/reset.png'
-import settings from './imgs/gear.png'
+import reset from './imgs/reiniciar.png'
+import settings from './imgs/ajustes.png'
 import Popup from './PopupSettings'
 
 const Inicio = () => {
@@ -56,11 +56,11 @@ const Inicio = () => {
     return (
         <div>
             {isOpen && <Popup
-                content={<>
+                content = {<>
                     <b>Ingresa el tamaño del tablero</b>
                     {/* Acá se especifica el tamaño del tablero */}
                     <div>
-                        <form onSubmit={createArray}>
+                        <form onSubmit = {createArray}>
                             <p></p>
                             <input 
                                 placeholder = "Ingresa un número entero"
@@ -76,28 +76,28 @@ const Inicio = () => {
                         </form>
                     </div>
                 </>}
-                handleClose={togglePopup}
+                handleClose = {togglePopup}
             />}
             <div className = "main-container">
-                <div className="left-container">
-                    <div className="stats-container">
-                        <div className="stats-icons">
-                            <input className="stats-icons" type="image" src={reset} 
-                                    alt="reset-button" onClick={(e) => {createArray2(e)}} 
+                <div className = "left-container">
+                    <div className = "stats-container">
+                        <div className = "stats-icons">
+                            <input className = "stats-icons" type = "image" src = {reset} 
+                                    alt = "reset-button" onClick = {(e) => {createArray2(e)}} 
                             />
                         </div>
-                        <div className="time-counter">
-                            <b>  Elapsed Time: 1:23:02s </b> 
+                        <div className = "time-counter">
+                            <b>  Tiempo: 1:23:02s </b> 
                         </div>
-                        <div className="stats-icons">
-                            <input className="stats-icons" type="image" src={settings} 
-                                    alt="settings-button" onClick={() => {togglePopup()}} 
+                        <div className = "stats-icons">
+                            <input className = "stats-icons" type = "image" src = {settings} 
+                                    alt = "settings-button" onClick = {() => {togglePopup()}} 
                             />
                         </div>
                     </div>
                     {
                         array.map( (item, key) =>
-                            <div className="game-row">
+                            <div className = "game-row">
                                 {
                                     Object.keys(item).map( (item2, key2) =>
                                         <div className = "button-container">
