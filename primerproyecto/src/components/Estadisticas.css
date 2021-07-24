@@ -4,7 +4,7 @@ body {
 
 .imagenSuperior {
     display: block;
-    margin-top: 25px;
+    margin-top: 0.5vw;
     margin-right: auto;
     margin-left: auto;
     width: 10%;
@@ -13,17 +13,17 @@ body {
 
 .encabezado {
     text-align: center;
-    font-size: 300%;
+    font-size: 3.0vw;
 }
 
 .textoMenor {
     text-align: center;
-    font-size: 200%;
+    font-size: 2.0vw;
 }
 
 .numeros {
     text-align: center;
-    font-size: 500%;
+    font-size: 5.0vw;
 }
 
 /* Create two equal columns that floats next to each other */
