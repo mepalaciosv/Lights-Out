@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
-import reset from './imgs/reiniciar.png'
-import settings from './imgs/ajustes.png'
 import Popup from './PopupSettings'
+
+// Import de imagenes
+import settings from './imgs/ajustes.png'
+import rules from './imgs/reglas.png'
+import stats from './imgs/estadisticas.png'
+import account from './imgs/cuenta.png'
+import newGame from './imgs/nuevo.png'
+import clue from './imgs/pista.png'
+import solution from './imgs/solucion.png'
+import team from './imgs/equipo.png'
+import reset from './imgs/reiniciar.png'
 
 const Inicio = () => {
 
@@ -96,21 +105,29 @@ const Inicio = () => {
             />}
             <div className = "main-container">
                 <div className = "left-container">
-                    <div className = "stats-container">
-                        <div className = "stats-icons">
-                            <input className = "stats-icons" type = "image" src = {reset} 
-                                    alt = "reset-button" onClick = {(e) => {createArray2(e)}} 
-                            />
-                        </div>
-                        <div className = "time-counter">
-                            <b>  Tiempo: 1:23:02s </b> 
-                        </div>
-                        <div className = "stats-icons">
-                            <input className = "stats-icons" type = "image" src = {settings} 
-                                    alt = "settings-button" onClick = {() => {togglePopup()}} 
-                            />
-                        </div>
+                    <div className = "left-button-element">
+                        <input className = "left-image" type = "image" src = {settings} 
+                            alt = "settings-button" onClick = {() => {togglePopup()}} 
+                        />
+                        <b className="buttons-text">Ajustes</b>
                     </div>
+                    <div className = "left-button-element">
+                        <input className = "left-image" type = "image" src = {rules} 
+                            alt = "settings-button" 
+                        />
+                        <b className="buttons-text">Reglas</b>
+                    </div>
+                    <div className = "left-button-element">
+                        <input className = "left-image" type = "image" src = {stats} 
+                            alt = "settings-button" 
+                        />
+                        <b className="buttons-text">Estadísticas</b>
+                    </div>
+                </div>
+                <div className = "game-container">
+                        <div className = "title-text">
+                            <b> LIGHTS OUT </b> 
+                        </div>
                     {
                         array.map( (item, key) =>
                             <div className = "game-row">
@@ -125,6 +142,44 @@ const Inicio = () => {
                             </div>
                         )
                     }
+                </div>
+            </div>
+            <div className="bottom-container">
+                <div className = "left-button-element">
+                        <input className = "left-image" type = "image" src = {account} 
+                            alt = "account-button"
+                        />
+                        <b className="buttons-text">Cuenta</b>
+                    </div>
+                <div className="bottom-button-element"> 
+                    <input className = "bottom-image" type = "image" src = {reset}
+                        alt = "reset-button" onClick = {(e) => {createArray2(e)}} 
+                    />
+                    <b className="buttons-text"> Reiniciar </b>
+                </div>
+                <div className="bottom-button-element">
+                    <input className = "bottom-image" type = "image" src = {newGame}
+                        alt = "newGame-button"
+                    />
+                    <b className="buttons-text"> Nuevo </b>
+                </div>
+                <div className="bottom-button-element">
+                    <input className = "bottom-image" type = "image" src = {clue}
+                        alt = "clue-button"
+                    />
+                    <b className="buttons-text"> Pista </b>
+                </div>
+                <div className="bottom-button-element">
+                    <input className = "bottom-image" type = "image" src = {solution}
+                        alt = "solution-button"
+                    />
+                    <b className="buttons-text"> Solucion </b>
+                </div>
+                <div className="bottom-button-element">
+                    <input className = "bottom-image" type = "image" src = {team}
+                        alt = "team-button"
+                    />
+                    <b className="buttons-text"> Equipo </b>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(220, 242, 248);
+  background-color: white !important;
 }
 
 /* TABLERO DE JUEGO */
@@ -14,61 +14,99 @@ body {
 }
 
 .on-button{
-    background-color: #F9E325;
-    border: 1px black solid;
+    background-color: #ffc107;
+    border: 0.3vw white solid;
     cursor: pointer;
-    flex:auto
+    flex:auto;
 }
 
 .off-button{
-  background-color: #464D65;
-  border: 1px black solid;
+  background-color: black;
+  border: 0.3vw white solid;
   cursor: pointer;
   flex: auto;
 }
 
 
-/* LEFT RIGHT INTERFACE */
+/* FULL INTERFACE */
 .main-container{
   width: 100vw;
-  height: 45vw;
+  height: 39vw;
   display: flex;
 }
 
+/* LEFT BUTTONS */
 .left-container{
-  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  width: 11vw;
+  justify-content: space-around;
+  background-color: #C4C4C4;
+}
+
+.left-button-element{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 13vw;
+  width: 11vw;
+  flex-direction: column;
+  background-color: #C4C4C4;
+}
+
+.left-image{
+  height: 6vw;
+}
+/* LIGHT OUT GAME */
+.game-container{
+  width: 89vw;
   display: flex;
   flex-direction: column;
   padding-top: 0vw;
-  padding-left: 32.5vw;
-  padding-right: 32.5vw;
+  padding-left: 28vw;
+  padding-right: 28vw;
+  padding-bottom: 1vw;
 }
 
-/* BOTONES ARRIBA DEL JUEGO */
-.stats-container{
-  height: 10vw;
+.bottom-container{
+  width: 100vw;
+  height: 13vw;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
-.time-counter{
-  width: 20vw;
+.bottom-button-element{
+  height: 13vw;
+  width: 17.8vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bottom-image{
+  height: 6vw;
+}
+/* BOTONES ARRIBA DEL JUEGO */
+
+.title-text{
+  width: 100%;
   padding-bottom: 1vw;
-  padding-top: 5vw;
-  background-color: #C4C4C4;
-  background-clip: content-box;
+  padding-top: 1vw;
+  font-size: 2.5vw;
+  font-weight: bold;
   text-align: center;
-  line-height: 4vw;
-  font-size: 1.7vw;
 }
 
-.stats-icons{
-  height: 9vw;
-  width: 4.5vw;
-  padding-top: 2.3vw;
-  padding-bottom: 2.2vw;
+.buttons-text{
+  width: 100%;
+  padding-bottom: 1vw;
+  padding-top: 1vw;
+  font-size: 1.5vw;
+  font-weight: bold;
+  text-align: center;
 }
-
 /* Popup style */
 .popup-box {
   position: fixed;

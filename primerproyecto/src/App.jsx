@@ -11,7 +11,6 @@ import {
 } from 'react-router-dom'
 
 // Importación de componentes
-import Header from './components/Header'
 import Inicio  from './components/Inicio'
 import Estadisticas from './components/Estadisticas'
 import Desarrolladores from './components/Desarrolladores'
@@ -28,7 +27,6 @@ import Login from './components/Login'
 function App() {
   return (
     <Router>
-      <Header />
       <Switch>
         {/* Página de Inicio */}
         <Route exact path = "/"> 
