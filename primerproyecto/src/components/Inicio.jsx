@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import Popup from './PopupSettings'
 
+// Importaciones para enrutar
+import {
+    Link
+  } from 'react-router-dom'
+
 // Import de imagenes
 import settings from './imgs/ajustes.png'
 import rules from './imgs/reglas.png'
@@ -107,20 +112,21 @@ const Inicio = () => {
                 <div className = "left-container">
                     <div className = "left-button-element">
                         <input className = "left-image" type = "image" src = {settings} 
-                            alt = "settings-button" onClick = {() => {togglePopup()}} 
-                        />
+                            alt = "settings-button" onClick = {() => {togglePopup()}} />
                         <b className="buttons-text">Ajustes</b>
                     </div>
                     <div className = "left-button-element">
-                        <input className = "left-image" type = "image" src = {rules} 
-                            alt = "settings-button" 
-                        />
+                        <Link to="./Reglas">
+                            <input className = "left-image" type = "image" src = {rules} 
+                                alt = "settings-button" />
+                        </Link>
                         <b className="buttons-text">Reglas</b>
                     </div>
                     <div className = "left-button-element">
-                        <input className = "left-image" type = "image" src = {stats} 
-                            alt = "settings-button" 
-                        />
+                        <Link to = "./Estadisticas">
+                            <input className = "left-image" type = "image" src = {stats} 
+                                alt = "settings-button" />
+                        </Link>
                         <b className="buttons-text">Estadísticas</b>
                     </div>
                 </div>
@@ -146,39 +152,37 @@ const Inicio = () => {
             </div>
             <div className="bottom-container">
                 <div className = "left-button-element">
-                        <input className = "left-image" type = "image" src = {account} 
-                            alt = "account-button"
-                        />
+                        <Link to="./Login">
+                            <input className = "left-image" type = "image" src = {account} 
+                                alt = "account-button"/>
+                        </Link>
                         <b className="buttons-text">Cuenta</b>
                     </div>
                 <div className="bottom-button-element"> 
                     <input className = "bottom-image" type = "image" src = {reset}
-                        alt = "reset-button" onClick = {(e) => {createArray2(e)}} 
-                    />
+                        alt = "reset-button" onClick = {(e) => {createArray2(e)}} />
                     <b className="buttons-text"> Reiniciar </b>
                 </div>
                 <div className="bottom-button-element">
                     <input className = "bottom-image" type = "image" src = {newGame}
-                        alt = "newGame-button"
-                    />
+                        alt = "newGame-button"/>
                     <b className="buttons-text"> Nuevo </b>
                 </div>
                 <div className="bottom-button-element">
                     <input className = "bottom-image" type = "image" src = {clue}
-                        alt = "clue-button"
-                    />
+                        alt = "clue-button"/>
                     <b className="buttons-text"> Pista </b>
                 </div>
                 <div className="bottom-button-element">
                     <input className = "bottom-image" type = "image" src = {solution}
-                        alt = "solution-button"
-                    />
-                    <b className="buttons-text"> Solucion </b>
+                        alt = "solution-button"/>
+                    <b className="buttons-text"> Solucion </b>                    
                 </div>
                 <div className="bottom-button-element">
-                    <input className = "bottom-image" type = "image" src = {team}
-                        alt = "team-button"
-                    />
+                    <Link to="./Desarrolladores">
+                        <input className = "bottom-image" type = "image" src = {team}
+                            alt = "team-button"/>
+                    </Link>
                     <b className="buttons-text"> Equipo </b>
                 </div>
             </div>

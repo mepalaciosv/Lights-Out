@@ -2,11 +2,20 @@ import React from 'react'
 import margarita from './imgs/margarita.jpg';
 import andres from './imgs/andres.png';
 import equipo from './imgs/equipo.png'
+import before from './imgs/atras.png';
 import "./Desarrolladores.css";
+
+import {
+  Link
+} from 'react-router-dom'
 
 const Desarrolladores = () => {
     return (
         <div>
+          <Link to = "/">
+            <input className = "left-image" type = "image" src = {before} 
+                                alt = "home-button" />
+          </Link>
           <div>
             <img src = {equipo} className = "imagenSuperior" alt = "imagenSuperior"/>
             <h1 className = "encabezado">Equipo</h1>

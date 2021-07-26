@@ -1,11 +1,20 @@
 import React from 'react';
 import imagen from './imgs/estadisticas.png';
+import before from './imgs/atras.png';
 import "./Estadisticas.css";
+
+import {
+  Link
+} from 'react-router-dom'
 
 const Estadisticas = () => {
 
   return (
     <div>
+        <Link to = "/">
+          <input className = "left-image" type = "image" src = {before} 
+                                alt = "home-button" />
+        </Link>
       <div>
         <img src = {imagen} className = "imagenSuperior" alt = "imagenSuperior"/>
         <h1 className = "encabezado">Estadísticas</h1>
