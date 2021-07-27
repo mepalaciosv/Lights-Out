@@ -13,7 +13,7 @@ const Desarrolladores = () => {
     return (
         <div>
           <Link to = "/">
-            <input className = "left-image" type = "image" src = {before} 
+            <input className = "retroceso" type = "image" src = {before} 
                                 alt = "home-button" />
           </Link>
           <div>

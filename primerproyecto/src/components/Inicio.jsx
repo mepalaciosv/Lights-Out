@@ -17,6 +17,8 @@ import solution from './imgs/solucion.png'
 import team from './imgs/equipo.png'
 import reset from './imgs/reiniciar.png'
 
+import './Inicio.css'
+
 const Inicio = () => {
 
     const [dimensions, setDimensions] = useState([4,4])
@@ -113,21 +115,21 @@ const Inicio = () => {
                     <div className = "left-button-element">
                         <input className = "left-image" type = "image" src = {settings} 
                             alt = "settings-button" onClick = {() => {togglePopup()}} />
-                        <b className="buttons-text">Ajustes</b>
+                        <b className = "buttons-text" onClick = {() => {togglePopup()}}>Ajustes</b>
                     </div>
                     <div className = "left-button-element">
-                        <Link to="./Reglas">
+                        <Link className = 'link' to="./Reglas">
                             <input className = "left-image" type = "image" src = {rules} 
                                 alt = "settings-button" />
+                            <b className="buttons-text">Reglas</b>
                         </Link>
-                        <b className="buttons-text">Reglas</b>
                     </div>
                     <div className = "left-button-element">
-                        <Link to = "./Estadisticas">
+                        <Link className = 'link' to = "./Estadisticas">
                             <input className = "left-image" type = "image" src = {stats} 
                                 alt = "settings-button" />
-                        </Link>
                         <b className="buttons-text">Estadísticas</b>
+                        </Link>
                     </div>
                 </div>
                 <div className = "game-container">
@@ -152,16 +154,16 @@ const Inicio = () => {
             </div>
             <div className="bottom-container">
                 <div className = "left-button-element">
-                        <Link to="./Login">
+                        <Link className = 'link' to="./Login">
                             <input className = "left-image" type = "image" src = {account} 
                                 alt = "account-button"/>
-                        </Link>
                         <b className="buttons-text">Cuenta</b>
+                        </Link>
                     </div>
                 <div className="bottom-button-element"> 
                     <input className = "bottom-image" type = "image" src = {reset}
                         alt = "reset-button" onClick = {(e) => {createArray2(e)}} />
-                    <b className="buttons-text"> Reiniciar </b>
+                    <b className="buttons-text" onClick = {(e) => {createArray2(e)}}> Reiniciar </b>
                 </div>
                 <div className="bottom-button-element">
                     <input className = "bottom-image" type = "image" src = {newGame}
@@ -179,11 +181,11 @@ const Inicio = () => {
                     <b className="buttons-text"> Solucion </b>                    
                 </div>
                 <div className="bottom-button-element">
-                    <Link to="./Desarrolladores">
+                    <Link className = 'link' to="./Desarrolladores">
                         <input className = "bottom-image" type = "image" src = {team}
                             alt = "team-button"/>
-                    </Link>
                     <b className="buttons-text"> Equipo </b>
+                    </Link>
                 </div>
             </div>
         </div>

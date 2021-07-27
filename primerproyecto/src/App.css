@@ -59,6 +59,11 @@ body {
 .left-image{
   height: 6vw;
 }
+
+.retroceso {
+  height: 6vw;
+}
+
 /* LIGHT OUT GAME */
 .game-container{
   width: 89vw;

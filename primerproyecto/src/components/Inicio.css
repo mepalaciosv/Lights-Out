@@ -1,0 +1,16 @@
+.left-image {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.buttons-text{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
