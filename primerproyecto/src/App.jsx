@@ -15,6 +15,7 @@ import Inicio  from './components/Inicio'
 import Estadisticas from './components/Estadisticas'
 import Desarrolladores from './components/Desarrolladores'
 import Login from './components/Login'
+import Reglas from './components/Reglas'
 
 // Tests
 // import Contador from './components/Tests/Contador'
@@ -46,6 +47,11 @@ function App() {
         {/* Página de Login */}
         <Route exact path = "/Login"> 
           <Login />
+        </Route>
+
+        {/* Página de Reglas */}
+        <Route exact path = "/Reglas"> 
+          <Reglas />
         </Route>
 
       </Switch>
