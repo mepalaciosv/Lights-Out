@@ -199,8 +199,8 @@ const Inicio = () => {
                 </div>
                 <div className="bottom-button-element">
                     <input className = "bottom-image" type = "image" src = {newGame}
-                        alt = "newGame-button"/>
-                    <b className="buttons-text"> Nuevo </b>
+                        alt = "newGame-button" onClick = {(e) => {createArray(e, false)}}/>
+                    <b className="buttons-text" onClick = {(e) => {createArray(e, false)}}> Nuevo </b>
                 </div>
                 <div className="bottom-button-element">
                     <input className = "bottom-image" type = "image" src = {clue}
