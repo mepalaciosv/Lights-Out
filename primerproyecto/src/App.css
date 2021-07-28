@@ -15,6 +15,12 @@ body {
   display: flex;
 }
 
+.button-container-sol{
+  flex:auto;
+  display: flex;
+  border: 0.3vw tomato solid;
+}
+
 .on-button{
     background-color: #ffc107;
     border: 0.3vw white solid;

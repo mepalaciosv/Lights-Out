@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Popup from './PopupSettings'
 
 // Importaciones para enrutar
@@ -21,24 +21,13 @@ import './Inicio.css'
 
 const Inicio = () => {
 
-    const [dimensions, setDimensions] = useState([4,4])
-    const [array, setArray] = useState([[false,false,false,false],[false,false,false,false],
-                                        [false,false,false,false],[false,false,false,false]])
     const [isOpen, setIsOpen] = useState(false)
 
-    const createArray = (e) => {
-        e.preventDefault()
-        console.log('se creo el array')
-        const newArray = Array(dimensions[0]).fill(false).map(row => new Array(dimensions[1]).fill(false))
-        setArray(newArray)
-        setIsOpen(!isOpen)
-    }
-    const createArray2 = (e) => {
-        e.preventDefault()
-        console.log('se creo el array')
-        const newArray = Array(dimensions[0]).fill(false).map(row => new Array(dimensions[1]).fill(false))
-        setArray(newArray)
-    }
+    const [dimensions, setDimensions] = useState([4,4])
+
+    const [array, setArray] = useState([])
+    const [solArray, setSolArray] = useState([])
+    const [showSol, setShowSol] = useState(false)
 
     const changeColor = (a,b) => {
         
@@ -60,14 +49,58 @@ const Inicio = () => {
             newArray[aN][bN+1] = !newArray[aN][bN+1]
         }
         setArray( newArray )  
+
+        const newSolArray = [...solArray]
+        newSolArray[aN][bN] = !newSolArray[aN][bN]
+
+        setSolArray(newSolArray)
+
+    }
+
+    const createArray = (e, pop) => {
+
+        e.preventDefault()
+        const newArray = Array(dimensions[0]).fill(false).map(row => new Array(dimensions[1]).fill(false))
+        const newSolArray = Array(dimensions[0]).fill(false).map(row => new Array(dimensions[1]).fill(false))
+
+        for (var i=0; i < dimensions[0] ; i++){
+            for (var j=0; j < dimensions[1] ; j++) {
+
+                let action = Math.random() < 0.2
+                newSolArray[i][j] = action
+
+                if(action) {
+                    newArray[i][j] = !newArray[i][j]
+                    if(i-1 >= 0){
+                        newArray[i-1][j] = !newArray[i-1][j]
+                    }
+                    if(i+1 < dimensions[0]){
+                        newArray[i+1][j] = !newArray[i+1][j]
+                    }
+                    if(j-1 >= 0){
+                        newArray[i][j-1] = !newArray[i][j-1]
+                    }
+                    if(j+1 < dimensions[1]){
+                        newArray[i][j+1] = !newArray[i][j+1]
+                    }
+                }
+            }
+        }
+
+        setSolArray(newSolArray)
+        setArray(newArray)
+
+        if (pop) {
+            setIsOpen(!isOpen)
+        }
     }
 
     const pista = () => {
 
     }
 
-    const solucion = () => {
-
+    const showSolution = () => {
+        setShowSol(!showSol)
     }
 
     const validarVictoria = () => {
@@ -82,7 +115,6 @@ const Inicio = () => {
         setDimensions([a,a])
     }
     const togglePopup = () => {
-        console.log('entro')
         setIsOpen(!isOpen);
       }
     return (
@@ -92,7 +124,7 @@ const Inicio = () => {
                     <b>Ingresa el tamaño del tablero</b>
                     {/* Acá se especifica el tamaño del tablero */}
                     <div>
-                        <form onSubmit = {createArray}>
+                        <form onSubmit = {(e) => createArray(e, true)}>
                             <p></p>
                             <input 
                                 placeholder = "Ingresa un número entero"
@@ -141,7 +173,7 @@ const Inicio = () => {
                             <div className = "game-row">
                                 {
                                     Object.keys(item).map( (item2, key2) =>
-                                        <div className = "button-container">
+                                        <div className = { (solArray[key][key2] && showSol) === true ? 'button-container-sol' : 'button-container'}>
                                             <button className = {array[key][key2] === true ? 'on-button' : 'off-button' } 
                                             type="button" onClick = { () => {changeColor(key,key2)} } > </button>
                                         </div>
@@ -162,8 +194,8 @@ const Inicio = () => {
                     </div>
                 <div className="bottom-button-element"> 
                     <input className = "bottom-image" type = "image" src = {reset}
-                        alt = "reset-button" onClick = {(e) => {createArray2(e)}} />
-                    <b className="buttons-text" onClick = {(e) => {createArray2(e)}}> Reiniciar </b>
+                        alt = "reset-button" onClick = {(e) => {createArray(e, false)}} />
+                    <b className="buttons-text" onClick = {(e) => {createArray(e, false)}}> Reiniciar </b>
                 </div>
                 <div className="bottom-button-element">
                     <input className = "bottom-image" type = "image" src = {newGame}
@@ -177,8 +209,8 @@ const Inicio = () => {
                 </div>
                 <div className="bottom-button-element">
                     <input className = "bottom-image" type = "image" src = {solution}
-                        alt = "solution-button"/>
-                    <b className="buttons-text"> Solucion </b>                    
+                        alt = "solution-button" onClick = { ()=> {showSolution() }} />
+                    <b className="buttons-text"> Solución </b>                    
                 </div>
                 <div className="bottom-button-element">
                     <Link className = 'link' to="./Desarrolladores">
