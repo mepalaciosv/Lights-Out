@@ -13,24 +13,26 @@ body {
 .button-container{
   flex:auto;
   display: flex;
+  padding: 0.3vw;
 }
 
 .button-container-sol{
   flex:auto;
   display: flex;
-  border: 0.3vw tomato solid;
+  padding: 0.3vw;
+  background-color: tomato;
 }
 
 .on-button{
     background-color: #ffc107;
-    border: 0.3vw white solid;
     cursor: pointer;
+    border: transparent;
     flex:auto;
 }
 
 .off-button{
   background-color: black;
-  border: 0.3vw white solid;
+  border: transparent;
   cursor: pointer;
   flex: auto;
 }
