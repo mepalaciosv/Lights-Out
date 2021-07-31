@@ -15,6 +15,7 @@ import Inicio  from './components/Inicio'
 import Estadisticas from './components/Estadisticas'
 import Desarrolladores from './components/Desarrolladores'
 import Login from './components/Login'
+import Register from './components/Register'
 import Reglas from './components/Reglas'
 
 // Tests
@@ -47,6 +48,11 @@ function App() {
         {/* Página de Login */}
         <Route exact path = "/Login"> 
           <Login />
+        </Route>
+
+        {/* Página de Registro */}
+        <Route exact path = "/Register"> 
+          <Register />
         </Route>
 
         {/* Página de Reglas */}
