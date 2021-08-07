@@ -30,19 +30,19 @@ const Login = () => {
           <body>
 
               <div>
-              <Link to = '/'>
-                <input className = 'retroceso' type = 'image' src = {before} alt = 'home-button'/>
-              </Link>
+                <Link to = '/'>
+                  <input className = 'retroceso' type = 'image' src = {before} alt = 'home-button'/>
+                </Link>
 
-              <div class = 'contenedorFormulario'>
+                <div class = 'contenedorFormulario'>
 
-                <div class = 'toggle'>
+                  <div class = 'toggle'>
                   <span>
                     <a href = '/Register'>Registro</a>
                   </span>
                 </div>
 
-                <div class = 'formulario'>
+                  <div class = 'formulario'>
                   <h2>Iniciar sesión</h2>
                   <form action = '#'>
                     <i class = 'fas fa-user'></i>
@@ -55,7 +55,7 @@ const Login = () => {
                   </form>
                 </div>
 
-                <div class = 'reset-password'>
+                  <div class = 'reset-password'>
                   <a href = '#'>Olvidé mi contraseña</a>
                 </div>
 
