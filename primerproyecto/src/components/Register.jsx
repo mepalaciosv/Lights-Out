@@ -33,29 +33,37 @@ const Register = () => {
 
               <div class = 'toggle'>
                 <span>
-                  <a href = '/Login'>Ingreso</a>
+                  <a href = '/Login'>Iniciar sesión</a>
                 </span>
               </div>
 
               <div class = 'formulario'>
                 <h2>Crear cuenta</h2>
                 <form action = '#'>
-                  <i class = 'fas fa-user'></i>
-                  <input type = 'text' placeholder = 'Usuario' required></input>
-
-                  <i class = 'fas fa-email'></i>
-                  <input type = 'email' placeholder = 'Correo' required></input>
-
+                  <div class = 'input-container'>
+                    <i class = 'fas fa-user icon'></i>
+                    <input type = 'text' placeholder = 'Usuario' required pattern = ".{6,}"
+                    title = "Debe contener 6 o más caracteres"></input>
+                  </div>
                   
-                  <i class = 'fas fa-key'></i>
-                  <input type = 'password' placeholder = 'Contraseña' required></input>
+                  <div class = 'input-container'>
+                    <i class = 'fas fa-envelope icon'></i>
+                    <input type = 'email' placeholder = 'Correo' required pattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></input>
+                  </div>
+
+                  <div class = 'input-container'>
+                    <i class = 'fas fa-key icon'></i>
+                    <input type = 'password' placeholder = 'Contraseña' required pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title = "Debe contener 8 o más caracteres y al menos un número, una mayúscula y una minúscula"></input>
+                  </div>
 
                   <input type = 'submit' value = 'Registrarse' required></input>
                 </form>
-              </div>
 
-              <div class = 'reset-password'>
-                <a href = '#'>Olvidé mi contraseña</a>
+                <div class = 'reset-password'>
+                  <a href = '#'>Olvidé mi contraseña</a>
+                </div>
+
               </div>
 
               </div>

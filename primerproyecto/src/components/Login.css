@@ -21,8 +21,8 @@
 
 .contenedorFormulario .toggle{
     position: absolute;
-    top: 7px;
-    right: 7px;
+    top: 10px;
+    right: 10px;
     width: 100px;
     height: 30px;
     font-size: 12px;
@@ -48,7 +48,6 @@
 }
 
 
-
 .contenedorFormulario h2{
     margin: 0 0 28px 0;
     font-size: 20px;
@@ -69,13 +68,26 @@
     padding: 10px 15px;
     color: #FFF;
     border: none;
-    border-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
     border-bottom: 4px solid #FF851B;
     font-size: 14px;
     font-weight: normal;
-    margin: 0 0 20px 0;
+    margin: 0 0 15px 0;
     transition: all 0.5s ease;
 }
+
+.input-container{
+        display: flex;
+        width: 100%;
+}
+
+.icon {
+    padding: 15px;
+    color: white;
+    min-width: 45px;
+    text-align: center;
+  }
 
 
 
@@ -97,6 +109,7 @@
     font-size: 16px;
     cursor: pointer;
     transition: all 0.5s ease;
+    border-radius: 2px;
 }
 
 
@@ -108,12 +121,28 @@
 
 
 .contenedorFormulario .reset-password {
-    background: rgba(0, 117, 217, 0.7);
+    background: #FF851B;
+    color: #FFF;
+    border: none;
     width: 100%;
-    padding: 15px 0;
+    padding: 10px 0;
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    margin: 10px auto;
     text-align: center;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;  
+    border-radius: 2px;
+
+    /*background: rgba(0, 117, 217, 0.7);
+    width: 100%;
+    padding: 15px 0;*/
+
+}
+
+.contenedorFormulario .reset-password:hover{
+    background: rgba(0, 117, 217, 0.7);    
 }
 
 .contenedorFormulario .reset-password a {
@@ -130,8 +159,9 @@
 
 
 .contenedorFormulario .formulario{
-    padding: 40px;
+    padding: 40px 40px 10px 40px;
     display: block;
+    justify-content: space-between;
 }
 
 

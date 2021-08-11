@@ -1,6 +1,7 @@
 import React from 'react'
 import margarita from './imgs/margarita.jpg';
 import andres from './imgs/andres.png';
+import camilo from './imgs/camilo.jfif';
 import equipo from './imgs/equipo.png'
 import before from './imgs/atras.png';
 import "./Desarrolladores.css";
@@ -25,7 +26,7 @@ const Desarrolladores = () => {
             <div class = "column">
               <img src = {andres} className = "imagenEquipo" alt = "imagenSuperior"/>
               <h1 className = "desarrollador">Andrés Romero</h1>
-              <h1 className = "descripcion">Ingeniero Químico e industrial</h1>
+              <h1 className = "descripcion">Ingeniero Químico e Industrial</h1>
               <a className = "contacto" href="https://github.com/AndresFRomero">github.com/AndresFRomero</a>
             </div>
             <div class="column">
@@ -33,6 +34,12 @@ const Desarrolladores = () => {
               <h1 className = "desarrollador">Margarita Palacios</h1>
               <h1 className = "descripcion">Matemática e Ingeniera Mecánica</h1>
               <a className = "contacto" href="https://github.com/mepalaciosv">github.com/mepalaciosv</a>
+            </div>
+            <div class="column">
+            <img src = {camilo} className = "imagenEquipo" alt = "imagenSuperior"/>
+              <h1 className = "desarrollador">Camilo Torres</h1>
+              <h1 className = "descripcion">Estudiante de Ingeniería de Sistemas</h1>
+              <a className = "contacto" href="https://github.com/torrescamilo1998">github.com/torrescamilo1998</a>
             </div>
           </div>
 

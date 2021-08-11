@@ -38,26 +38,36 @@ const Login = () => {
 
                   <div class = 'toggle'>
                   <span>
-                    <a href = '/Register'>Registro</a>
+                    <a href = '/Register'>Crear cuenta</a>
                   </span>
                 </div>
 
                   <div class = 'formulario'>
                   <h2>Iniciar sesión</h2>
                   <form action = '#'>
-                    <i class = 'fas fa-user'></i>
-                    <input type = 'text' placeholder = 'Usuario' required></input>
+                    <div class = 'input-container'>
+                      <i class = 'fas fa-user icon'></i>
+                      <input type = 'text' placeholder = 'Usuario' required required pattern = ".{6,}"
+                      title = "Debe contener 6 o más caracteres"></input>
+                    </div>
                     
-                    <i class = 'fas fa-key'></i>
-                    <input type = 'password' placeholder = 'Contraseña' required></input>
-
-                    <input type = 'submit' value = 'Iniciar sesión' required></input>
+                    <div class = 'input-container'>
+                      <i class = 'fas fa-key icon'></i>
+                      <input type = 'password' placeholder = 'Contraseña' required></input>
+                    </div>
+                    
+                    <input type = 'submit' value = 'Iniciar sesión' required required pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title = "Debe contener 8 o más caracteres y al menos un número, una mayúscula y una minúscula"></input>
                   </form>
-                </div>
 
                   <div class = 'reset-password'>
-                  <a href = '#'>Olvidé mi contraseña</a>
-                </div>
+                    <a href = '#'>Olvidé mi contraseña</a>
+                  </div>
+
+
+                  </div>
+
+                  
 
                 </div>
                   
