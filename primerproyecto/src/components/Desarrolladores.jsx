@@ -22,20 +22,20 @@ const Desarrolladores = () => {
             <h1 className = "encabezado">Equipo</h1>
           </div>
 
-          <div class = "stats-container">
-            <div class = "column">
+          <div className = "stats-container">
+            <div className = "column">
               <img src = {andres} className = "imagenEquipo" alt = "imagenSuperior"/>
               <h1 className = "desarrollador">Andrés Romero</h1>
               <h1 className = "descripcion">Ingeniero Químico e Industrial</h1>
               <a className = "contacto" href="https://github.com/AndresFRomero">github.com/AndresFRomero</a>
             </div>
-            <div class="column">
+            <div className="column">
             <img src = {margarita} className = "imagenEquipo" alt = "imagenSuperior"/>
               <h1 className = "desarrollador">Margarita Palacios</h1>
               <h1 className = "descripcion">Matemática e Ingeniera Mecánica</h1>
               <a className = "contacto" href="https://github.com/mepalaciosv">github.com/mepalaciosv</a>
             </div>
-            <div class="column">
+            <div className="column">
             <img src = {camilo} className = "imagenEquipo" alt = "imagenSuperior"/>
               <h1 className = "desarrollador">Camilo Torres</h1>
               <h1 className = "descripcion">Estudiante de Ingeniería de Sistemas</h1>

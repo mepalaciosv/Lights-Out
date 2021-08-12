@@ -22,37 +22,37 @@ const Login = () => {
     };
     
       return (
-        <html>
-          <head>
+        <div>
+          <div>
             <link rel = 'stylesheet' href = 'https:use.fontawesome.com/releases/v5.6.3/css/all.css'></link>
 
-          </head>
-          <body>
+          </div>
+          <div>
 
               <div>
                 <Link to = '/'>
                   <input className = 'retroceso' type = 'image' src = {before} alt = 'home-button'/>
                 </Link>
 
-                <div class = 'contenedorFormulario'>
+                <div className = 'contenedorFormulario'>
 
-                  <div class = 'toggle'>
+                  <div className = 'toggle'>
                   <span>
                     <a href = '/Register'>Crear cuenta</a>
                   </span>
                 </div>
 
-                  <div class = 'formulario'>
+                  <div className = 'formulario'>
                   <h2>Iniciar sesión</h2>
                   <form action = '#'>
-                    <div class = 'input-container'>
-                      <i class = 'fas fa-user icon'></i>
+                    <div className = 'input-container'>
+                      <i className = 'fas fa-user icon'></i>
                       <input type = 'text' placeholder = 'Usuario' required required pattern = ".{6,}"
                       title = "Debe contener 6 o más caracteres"></input>
                     </div>
                     
-                    <div class = 'input-container'>
-                      <i class = 'fas fa-key icon'></i>
+                    <div className = 'input-container'>
+                      <i className = 'fas fa-key icon'></i>
                       <input type = 'password' placeholder = 'Contraseña' required></input>
                     </div>
                     
@@ -60,132 +60,15 @@ const Login = () => {
                     title = "Debe contener 8 o más caracteres y al menos un número, una mayúscula y una minúscula"></input>
                   </form>
 
-                  <div class = 'reset-password'>
+                  <div className = 'reset-password'>
                     <a href = '#'>Olvidé mi contraseña</a>
                   </div>
 
-
                   </div>
-
-                  
-
-                </div>
-                  
+                </div>       
               </div>
-
-          </body>
-        </html>
-
-        
-
-
-
-/*
-            <div class = 'contenedorFormulario'>
-
-              <div class = 'toggle' onClick = {() => {iniciarSesion()}} >
-                <span>Crear cuenta</span>
-              </div>
-
-              <div class = 'formulario'>
-                <h2>Iniciar sesión</h2>
-                <form action = '#'>
-                  <input type = 'text' placeholder = 'Usuario' required></input>
-                  <input type = 'password' placeholder = 'Contraseña' required></input>
-                  <input type = 'submit' value = 'Iniciar sesión' required></input>
-                </form>
-              </div>
-
-              <div class = 'formulario'>
-                <h2>Crear cuenta</h2>
-                <form action = '#'>
-                  <input type = 'text' placeholder = 'Usuario' required></input>
-                  <input type = 'email' placeholder = 'Correo' required></input>
-                  <input type = 'password' placeholder = 'Contraseña' required></input>
-                  <input type = 'submit' value = 'Registrarse' required></input>
-                </form>
-              </div>
-
-              <div class = 'reset-password'>
-                <a href = '#'>Olvidé mi contraseña</a>
-              </div>
-
-            </div>
-*/
-
-        
-
-        /*
-        <div>
-
-          <Link to = "/">
-              <input className = "retroceso" type = "image" src = {before} 
-                                alt = "home-button" />
-          </Link>
-          <Form
-            name = "basic"
-            labelCol = {{
-              span: 8,
-            }}
-            wrapperCol = {{
-              span: 9,
-            }}
-            initialValues = {{
-              remember: true,
-            }}
-            onFinish = {onFinish}
-            onFinishFailed = {onFinishFailed}
-          >
-            <Form.Item
-              label = "Usuario"
-              name = "usuario"
-              rules = {[
-                {
-                  required: true,
-                  message: 'Por favor ingresa tu usuario',
-                },
-              ]}
-            >
-              <Input />
-            </Form.Item>
-      
-            <Form.Item
-              label = "Contraseña"
-              name = "contraseña"
-              rules = {[
-                {
-                  required: true,
-                  message: 'Por favor ingresa tu contraseña',
-                },
-              ]}
-            >
-              <Input.Password />
-            </Form.Item>
-      
-            <Form.Item
-              name = "remember"
-              valuePropName = "checked"
-              wrapperCol = {{
-                offset: 8,
-                span: 8,
-              }}
-            >
-              <Checkbox>Recuerda mi cuenta</Checkbox>
-            </Form.Item>
-      
-            <Form.Item
-              wrapperCol = {{
-                offset: 8,
-                span: 8,
-              }}
-            >
-              <Button type = "primary" htmlType = "submit">
-                Iniciar sesión
-              </Button>
-            </Form.Item>
-          </Form>
+          </div>
         </div>
-        */
       );
 }
 
