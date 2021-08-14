@@ -1,6 +1,6 @@
 import React from 'react'
 import margarita from './imgs/margarita.jpg';
-import andres from './imgs/andres.png';
+import andres from './imgs/andres.jpeg';
 import camilo from './imgs/camilo.jfif';
 import equipo from './imgs/equipo.png'
 import before from './imgs/atras.png';
