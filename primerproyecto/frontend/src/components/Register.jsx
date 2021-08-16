@@ -1,6 +1,7 @@
 import { Form, Input, Button, Checkbox } from 'antd';
 import React from 'react';
 import before from './imgs/atras.png';
+import axios from 'axios';
 
 // Importaciones para enrutar
 import {
@@ -8,13 +9,29 @@ import {
 } from 'react-router-dom'
 
 const Register = () => {
-    const onFinish = (values) => {
+
+      const onFinish = (values) => {
         console.log('Success:', values);
       };
     
       const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
       };
+
+      const onSubmit = (e) => {
+        e.preventDefault();
+
+        const newUser = {
+          username: 'userTest',
+          email: 'emailTest',
+          password: 'passwordTest'
+        }
+
+        axios.post('http://localhost:8000/users/add', newUser)
+            .then(res => console.log(res.data))
+
+        console.log(`Form submitted:`);
+      }
     
       return (
         <div>
@@ -39,7 +56,7 @@ const Register = () => {
 
               <div className = 'formulario'>
                 <h2>Crear cuenta</h2>
-                <form action = '#'>
+                <form onSubmit = {(e) => onSubmit(e)}>
                   <div className = 'input-container'>
                     <i className = 'fas fa-user icon'></i>
                     <input type = 'text' placeholder = 'Usuario' required pattern = ".{6,}"
@@ -59,6 +76,7 @@ const Register = () => {
 
                   <input type = 'submit' value = 'Registrarse' required></input>
                 </form>
+                
 
                 <div className = 'reset-password'>
                   <a href = 'hola'>Olvidé mi contraseña</a>

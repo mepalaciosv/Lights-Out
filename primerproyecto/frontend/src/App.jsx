@@ -18,14 +18,6 @@ import Login from './components/Login'
 import Register from './components/Register'
 import Reglas from './components/Reglas'
 
-// Tests
-// import Contador from './components/Tests/Contador'
-// import Listado from './components/Tests/Listado'
-// import Temperatura from './components/Tests/Temperatura'
-// import Formulario from './components/Tests/Formulario'
-// import ListadoNombres from './components/Tests/ListadoNombres'
-// import Usuarios from './components/Tests/Usuarios'
-
 function App() {
   return (
     <Router>
