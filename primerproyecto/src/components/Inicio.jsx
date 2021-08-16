@@ -17,8 +17,6 @@ import solution from './imgs/solucion.png'
 import team from './imgs/equipo.png'
 import reset from './imgs/reiniciar.png'
 
-import './Inicio.css'
-
 const Inicio = () => {
 
     const [isOpen, setIsOpen] = useState(false)
