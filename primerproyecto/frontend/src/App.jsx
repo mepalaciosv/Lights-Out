@@ -17,6 +17,8 @@ import Desarrolladores from './components/Desarrolladores'
 import Login from './components/Login'
 import Register from './components/Register'
 import Reglas from './components/Reglas'
+import Success from './components/Success'
+import Fail from './components/Fail'
 
 function App() {
   return (
@@ -50,6 +52,16 @@ function App() {
         {/* Página de Reglas */}
         <Route exact path = "/Reglas"> 
           <Reglas />
+        </Route>
+
+        {/* Página de Success */}
+        <Route exact path = "/Success"> 
+          <Success />
+        </Route>
+
+        {/* Página de Fail */}
+        <Route exact path = "/Fail"> 
+          <Fail />
         </Route>
 
       </Switch>

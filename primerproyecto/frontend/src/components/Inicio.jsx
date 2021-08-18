@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Popup from './PopupSettings'
+import axios from 'axios';
 
 // Importaciones para enrutar
 import {
@@ -93,18 +94,27 @@ const Inicio = () => {
         if (pop) {
             setIsOpen(!isOpen)
         }
+        
+        const obj = {
+            games:1,
+            clues:0,
+            solutions:0,
+            wins:0
+        }
+        axios.post('http://localhost:8000/users/update/'+sessionStorage.getItem('userId'), {data:{}}, {params: {games:1, wins: 0, solutions:0, clues:0}})
     }
 
     const pista = () => {
-
+        axios.post('http://localhost:8000/users/update/'+sessionStorage.getItem('userId'), {data:{}}, {params: {games:0, wins: 0, solutions:0, clues:1}})
     }
 
     const showSolution = () => {
         setShowSol(!showSol)
+        axios.post('http://localhost:8000/users/update/'+sessionStorage.getItem('userId'), {data:{}}, {params: {games:0, wins: 0, solutions:1, clues:0}})
     }
 
     const validarVictoria = () => {
-
+        axios.post('http://localhost:8000/users/update/'+sessionStorage.getItem('userId'), {data:{}}, {params: {games:0, wins: 1, solutions:0, clues:0}})
     }
 
     const nuevoJuego = () => {
@@ -119,6 +129,7 @@ const Inicio = () => {
       }
     return (
         <div>
+            {/* POPUP de tamaño */}
             {isOpen && <Popup
                 content = {<>
                     <b>Ingresa el tamaño del tablero</b>
@@ -147,7 +158,7 @@ const Inicio = () => {
                     <div className = "left-button-element">
                         <input className = "left-image" type = "image" src = {settings} 
                             alt = "settings-button" onClick = {() => {togglePopup()}} />
-                        <b className = "buttons-text" onClick = {() => {togglePopup()}}>Ajustes</b>
+                        <b className = "buttons-text" onClick = {() => {togglePopup()}} > Ajustes </b>
                     </div>
                     <div className = "left-button-element">
                         <Link className = 'link' to="./Reglas">
@@ -166,7 +177,7 @@ const Inicio = () => {
                 </div>
                 <div className = "game-container">
                         <div className = "title-text">
-                            <b> LIGHTS OUT </b> 
+                            <b> LIGHTS OUT {sessionStorage.getItem('userName')}</b> 
                         </div>
                     {
                         array.map( (item, key) =>
@@ -204,7 +215,7 @@ const Inicio = () => {
                 </div>
                 <div className="bottom-button-element">
                     <input className = "bottom-image" type = "image" src = {clue}
-                        alt = "clue-button"/>
+                        alt = "clue-button" onClick = { ()=> {pista() }} />
                     <b className="buttons-text"> Pista </b>
                 </div>
                 <div className="bottom-button-element">

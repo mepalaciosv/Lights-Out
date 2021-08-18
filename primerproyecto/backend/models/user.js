@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let User = new Schema({
+let UserSchema = new Schema({
     username: {
         type: String
     },
@@ -14,6 +14,9 @@ let User = new Schema({
     games: {
         type: Number
     },
+    wins:{
+        type:Number
+    },
     clues: {
         type: Number
     },
@@ -22,4 +25,4 @@ let User = new Schema({
     }
 });
 
-module.exports = mongoose.model('User', User);
+module.exports = mongoose.model('user', UserSchema);
