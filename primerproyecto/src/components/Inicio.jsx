@@ -53,6 +53,8 @@ const Inicio = () => {
 
         setSolArray(newSolArray)
 
+        validarVictoria();
+
     }
 
     const createArray = (e, pop) => {
@@ -102,7 +104,17 @@ const Inicio = () => {
     }
 
     const validarVictoria = () => {
-
+        var isWon = true;
+        for(var i = 0; i < solArray.length; i++){
+            for(var j = 0; j < solArray[i].length; j++){
+                if(solArray[i][j] == true){
+                    isWon = false;
+                }
+            }
+        }
+        if(isWon == true){
+            alert('Has ganado. :D');
+        }
     }
 
     const nuevoJuego = () => {
