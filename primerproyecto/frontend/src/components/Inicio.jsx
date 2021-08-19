@@ -111,7 +111,10 @@ const Inicio = () => {
     }
 
     const pista = () => {
-        updateDB(0,0,0,1)
+        if (!showSol) {
+            updateDB(0,0,0,1)
+        }
+        setShowSol(!showSol)
     }
 
     const showSolution = () => {
