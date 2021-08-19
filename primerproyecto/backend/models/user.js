@@ -22,6 +22,12 @@ let UserSchema = new Schema({
     },
     solutions: {
         type: Number
+    },
+    createdAt: {
+        type: Date
+    },
+    verified: {
+        type: String
     }
 });
 

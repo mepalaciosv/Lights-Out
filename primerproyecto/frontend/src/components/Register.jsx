@@ -27,7 +27,9 @@ const Register = () => {
           games: 0,
           wins: 0,
           clues: 0,
-          solutions: 0
+          solutions: 0,
+          createdAt: Date(),
+          verified: "Sin Verificar"
         }
 
         const response = await axios.get('http://localhost:8000/users/validateRegister', { params : {username: username, email: email}})

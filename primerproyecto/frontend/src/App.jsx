@@ -19,6 +19,7 @@ import Register from './components/Register'
 import Reglas from './components/Reglas'
 import Success from './components/Success'
 import Fail from './components/Fail'
+import Account from './components/Account'
 
 function App() {
   return (
@@ -62,6 +63,11 @@ function App() {
         {/* Página de Fail */}
         <Route exact path = "/Fail"> 
           <Fail />
+        </Route>
+
+        {/* Página de Account */}
+        <Route exact path = "/Account"> 
+          <Account />
         </Route>
 
       </Switch>

@@ -12,10 +12,11 @@ const Reglas = () => {
                                 alt = "home-button" />
             </Link>
             <div className="buttons-text">
-                1. Apaga todas las luces
-                2. Cuando alternas una luz, sus vecinas también lo hacen
-                3. Usa pistas cuándo te estanques
-                4. Ve nuestra solución si aún no puedes lograrlo
+                <h3> <b>  REGLAS  </b> </h3>
+                <li> Apaga todas las luces </li>
+                <li> Cuando alternas una luz, sus vecinas también lo hacen</li>
+                <li> Usa pistas cuándo te estanques </li>
+                <li> Ve nuestra solución si aún no puedes lograrlo </li>
             </div>
             
         </div>

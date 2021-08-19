@@ -1,4 +1,5 @@
 const express = require('express');
+const bcrypt = require('bcryptjs');
 const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -16,7 +17,6 @@ mongoose.connect('mongodb+srv://aromero:Cronometro11@clusterlightout.ficwy.mongo
                                           .catch(err => console.error(err))
 
 const connection = mongoose.connection
-
 connection.once('open', function () {
     console.log("MongoDB database connection established successfully")
 });
@@ -75,10 +75,33 @@ userRoutes.route('/find/:id').get( async (req, res) => {
         if (!user){
             res.status(404).send("data is not found")
         } else {
-            res.status(200).json({'games': user.games, 'wins': user.wins, 'clues': user.clues, 'solutions': user.solutions})
+            res.status(200).json(user)
         }
     })
 
+})
+
+userRoutes.route('/findUser/:username/:password').get( async (req, res) => {
+
+    let username = req.params.username
+    let password = req.params.password
+
+    const users = await User.find( { username: username })
+
+    if (users.length === 0) {
+        console.log("data is not found")
+        res.send("data is not found")
+    } else {
+        const result = await bcrypt.compare(password, users[0].password)
+
+        if (result) {
+            console.log("password correct")
+            res.status(200).json(users[0])
+        } else {
+            console.log("password incorrect")
+            res.send("password incorrect")
+        }
+    }
 })
 
 app.listen(PORT, function() {

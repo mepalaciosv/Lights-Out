@@ -30,6 +30,15 @@ const Inicio = () => {
     const [solArray, setSolArray] = useState([])
     const [showSol, setShowSol] = useState(false)
 
+    useEffect( () => {
+
+    }, [array, solArray])
+
+    const updateDB = (a,b,c,d) => {
+        if (sessionStorage.getItem("userId") !== null ){
+            axios.post('http://localhost:8000/users/update/'+sessionStorage.getItem('userId'), {data:{}}, {params: {games:a, wins: b, solutions:c, clues:d}})
+        }
+    }
     const changeColor = (a,b) => {
         
         const aN = Number(a)
@@ -49,6 +58,8 @@ const Inicio = () => {
         if(bN+1 < dimensions[1]){
             newArray[aN][bN+1] = !newArray[aN][bN+1]
         }
+
+
         setArray( newArray )  
 
         const newSolArray = [...solArray]
@@ -56,6 +67,8 @@ const Inicio = () => {
 
         setSolArray(newSolArray)
 
+        // Se verifica si se encontró solucion
+        validarVictoria(newArray)
     }
 
     const createArray = (e, pop) => {
@@ -94,31 +107,37 @@ const Inicio = () => {
         if (pop) {
             setIsOpen(!isOpen)
         }
-        
-        const obj = {
-            games:1,
-            clues:0,
-            solutions:0,
-            wins:0
-        }
-        axios.post('http://localhost:8000/users/update/'+sessionStorage.getItem('userId'), {data:{}}, {params: {games:1, wins: 0, solutions:0, clues:0}})
+            updateDB(1,0,0,0)
     }
 
     const pista = () => {
-        axios.post('http://localhost:8000/users/update/'+sessionStorage.getItem('userId'), {data:{}}, {params: {games:0, wins: 0, solutions:0, clues:1}})
+        updateDB(0,0,0,1)
     }
 
     const showSolution = () => {
+        if (!showSol) {
+            updateDB(0,0,1,0)
+        }
         setShowSol(!showSol)
-        axios.post('http://localhost:8000/users/update/'+sessionStorage.getItem('userId'), {data:{}}, {params: {games:0, wins: 0, solutions:1, clues:0}})
     }
 
-    const validarVictoria = () => {
-        axios.post('http://localhost:8000/users/update/'+sessionStorage.getItem('userId'), {data:{}}, {params: {games:0, wins: 1, solutions:0, clues:0}})
-    }
+    const validarVictoria = (array) => {
 
-    const nuevoJuego = () => {
-        
+        let win = true
+
+        for( var i=0; i < dimensions[0] ; i++) {
+            for (var j=0; j < dimensions[1] ; j++) {
+                if (array[i][j]){
+                    win = false
+                }
+            }
+        }
+        if (win) {
+            console.log("Gano la partida")
+            setShowSol(false)
+            alert('Has ganado. :D');
+            updateDB(0,1,0,0)
+        }
     }
 
     const changeDimensions = (a) => {
@@ -197,7 +216,7 @@ const Inicio = () => {
             </div>
             <div className="bottom-container">
                 <div className = "left-button-element">
-                        <Link className = 'link' to="./Login">
+                        <Link className = 'link' to={ sessionStorage.getItem('userId') === null ? "./Login" : "./Account" }>
                             <input className = "left-image" type = "image" src = {account} 
                                 alt = "account-button"/>
                         <b className="buttons-text">Cuenta</b>
